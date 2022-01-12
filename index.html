@@ -12,11 +12,17 @@
         <a href="gataca">HTM sequence learning over a 1D domain.</a></h3>
         
         <p>
-          This demo shows the HTM temporal memory algorithm operating on a simple 1D domain containing only four possible input states.
-          The input states are for letters: A, C, G, T. Three sensor patches move over the domain. Each sensor patch consists of five
-          sensors that directly encode the input state in one of four active neurons (bits) associated with each sensor. The last three
-          neurons associated with each patch is an encoding of the next movement of the patch in one of three bits: left, stay, right.
-          These inputs are then incorporated into three temporal memory modules with eight neurons per column.
+          This demo shows the HTM temporal memory algorithm operating
+          on a simple 1D domain containing only four possible input
+          states.  The input states are for letters: A, C, G, T. Three
+          sensor patches move over the domain. Each sensor patch
+          consists of five sensors that directly encode the input
+          state in one of four active neurons (bits) associated with
+          each sensor. The last three neurons associated with each
+          patch is an encoding of the next movement of the patch in
+          one of three bits: left, stay, right.  These inputs are then
+          incorporated into three temporal memory modules with eight
+          neurons per column.
           
       </li>
       
@@ -25,11 +31,28 @@
         <a href="stereo-test">Early stage visualization of an agent with binocular/stereo vision.</a></h3>
         
         <p>
-          Prototype visualization of a simple agent in a simple environment. The agent possesses two cameras for visual input. The RGB
-          channels are then digitized very coarsely and projected onto a pair of virtual retinas. This is of course not how the actual
-          processing occurs in the retina. That is currently on the TODO list. The purpose of this visualization was to prototype a
-          potential interactive application that would be able to show the initial stages of encoding and processing stereo vision.
+          Prototype visualization of a simple agent in a simple
+          environment. The agent possesses two cameras for visual
+          input. The RGB channels are then digitized very coarsely and
+          projected onto a pair of virtual retinas. This is of course
+          not how the actual processing occurs in the retina. That is
+          currently on the TODO list. The purpose of this
+          visualization was to prototype a potential interactive
+          application that would be able to show the initial stages of
+          encoding and processing stereo vision.
           
+      </li>
+      
+      <li>
+        <h3><a id="vision-proto1" class="anchor" href="#vision-proto1" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+          <a href="vision-proto1">Stereo vision retinal encoding</a></h3>
+        
+        <p>
+          A more detailed stereo vision prototype. This one is
+          designed to understand more about how to create a
+          sensor-motor feedback loop for aligning two independent
+          retinal sensor patches on the same location in the input
+          field.
       </li>
       
       <li>
@@ -37,9 +60,12 @@
         <a href="MazeRunner">2D Maze environment with rudimentary physics. Potential environment for agent.</h3></a>
         
         <p>
-          Another candidate for a simple embodied agent: a spherical rat in a maze. This demo only got as far as implementing basic collision
-          physics before getting bogged down in non-AI details. Going foward, I will probably utilize an existing physics engine and focus
-          on how the agent generates movement and receives sensor feedback from its environment.
+          Another candidate for a simple embodied agent: a spherical
+          rat in a maze. This demo only got as far as implementing
+          basic collision physics before getting bogged down in non-AI
+          details. Going foward, I will probably utilize an existing
+          physics engine and focus on how the agent generates movement
+          and receives sensor feedback from its environment.
           
       </li>
       <li>
@@ -47,10 +73,15 @@
         <a href="nnvis">3D visualization of a simulated cortical column.</a></h3>
         
         <p>
-          This demo is mostly pretty flashing lights that demonstrates one potential way to visualize the inner workings of a single cortical
-          column. There was a half-hearted attempt to implement a temporal memory algorithm, and you can kind of see it working in the shifting
-          of the neurons from red (active-bursting) to blue (predicted) and green (active-predicted). However, the proximal inputs at the
-          lowest level are essentially random, so no meaningful learning is taking place.
+          This demo is mostly pretty flashing lights that demonstrates
+          one potential way to visualize the inner workings of a
+          single cortical column. There was a half-hearted attempt to
+          implement a temporal memory algorithm, and you can kind of
+          see it working in the shifting of the neurons from red
+          (active-bursting) to blue (predicted) and green
+          (active-predicted). However, the proximal inputs at the
+          lowest level are essentially random, so no meaningful
+          learning is taking place.
           
       </li>
       
@@ -59,27 +90,42 @@
         <a href="mnist-sparse-rep">Sparse encoding of MNIST digits using a simple dictionary lookup algorithm.</a></h3>
         
         <p>
-          Atoms in the dictionary are initialized by sub-sampling from a set of random images in the training set. 
-          Thereafter these atoms are used as an overcomplete basis set to encode portions of subsequent images. The encoding selects
-          the best atom by direct projection (dot product of image and basis atom) to obtain a correlation coefficient. The product of this
-          coefficient and the basis atom is subtracted from the image leaving a residual. This residual is then subjected to the same procedure
-          to select the next atom that best captures the image features that were not present in the first atom. This continues until the atom
-          limit is reached or the magnitude of the residual falls below a minimum threshold. The reconstructed image is then displayed along with
-          the residual.
+          Atoms in the dictionary are initialized by sub-sampling from
+          a set of random images in the training set.  Thereafter
+          these atoms are used as an overcomplete basis set to encode
+          portions of subsequent images. The encoding selects the best
+          atom by direct projection (dot product of image and basis
+          atom) to obtain a correlation coefficient. The product of
+          this coefficient and the basis atom is subtracted from the
+          image leaving a residual. This residual is then subjected to
+          the same procedure to select the next atom that best
+          captures the image features that were not present in the
+          first atom. This continues until the atom limit is reached
+          or the magnitude of the residual falls below a minimum
+          threshold. The reconstructed image is then displayed along
+          with the residual.
         <p>
-          NOTE: This demo is not currently learning or adapting the atoms after the initial sampling stage. This simple choice for the basis set
-          yields some fairly impressive results which can best be appreciated by comparing them to the reconstructions that results if you enable
-          the "random atoms" checkbox in the menu.
+          NOTE: This demo is not currently learning or adapting the
+          atoms after the initial sampling stage. This simple choice
+          for the basis set yields some fairly impressive results
+          which can best be appreciated by comparing them to the
+          reconstructions that results if you enable the "random
+          atoms" checkbox in the menu.
           
       </li>
+        
     </ul>
     <h2> Notes </h2>
     <ul>
-      <li>For demos showing simulated neurons and/or synapses, colors are indicative of the current state of the neuron.
+      <li>For demos showing simulated neurons and/or synapses, colors
+      are indicative of the current state of the neuron.
         <ul>
-          <li>Blue: predictive (high-probability of becoming active soon)</li>
-          <li>Green: normal activation (activated by proximal input after being in the predictive state)</li>
-          <li>Red: bursting (activated by proximal input without first being predicted)</li>
+          <li>Blue: predictive (high-probability of becoming active
+          soon)</li>
+          <li>Green: normal activation (activated by proximal input
+          after being in the predictive state)</li>
+          <li>Red: bursting (activated by proximal input without first
+          being predicted)</li>
         </ul>
       </li>
     </ul>
