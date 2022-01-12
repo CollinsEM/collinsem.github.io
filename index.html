@@ -53,6 +53,34 @@
           sensor-motor feedback loop for aligning two independent
           retinal sensor patches on the same location in the input
           field.
+
+        <p>
+          In this demo, two retinal patches are overlaid on an input
+          field consisting of a sequence of colored MNIST digits. Each
+          patch consists of multiple retinal sensors covering a fixed
+          spatial extent. The individual circles rendered on the
+          sequence display the receptive field of each retinal sensor.
+
+        <p>
+          The main portion of the display window shows the cortical
+          regions associated with the two retinal patches. Each region
+          consists of a cortical column for each retinal
+          sensor. Within each column are multiple minicolumns. Each
+          minicolumn is proximally connected to the column's sensor
+          via a log-Gabor convolutional filter. This filter is
+          currently standing in place for what will eventually become
+          an adaptive (Hebbian) filter. The minicolumn with the
+          greatest filter response (dot product of receptive field
+          with log-Gabor filter) fires first and then decays over
+          time. While it is fading, the next best filter match has the
+          opportunity to fire. This process continues until either no
+          more filters exceed the activation threshold, or any of the
+          previously activated filters have completed their refractory
+          period and are ready to fire again.
+
+        <p>
+          NOTE: Some of the controls are currently inactive as the
+          backend functionality has not yet been completed.
       </li>
       
       <li>
