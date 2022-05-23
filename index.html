@@ -44,46 +44,6 @@
       </li>
       
       <li>
-        <h3><a id="vision-proto1" class="anchor" href="#vision-proto1" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-          <a href="https://stereo-vision-test1.herokuapp.com/">Stereo vision prototype with retinal encoding visualization</a></h3>
-        
-        <p>
-          A more detailed stereo vision prototype. This one is
-          designed to understand more about how to create a
-          sensor-motor feedback loop for aligning two independent
-          retinal sensor patches on the same location in the input
-          field.
-
-        <p>
-          In this demo, two retinal patches are overlaid on an input
-          field consisting of a sequence of colored MNIST digits. Each
-          patch consists of multiple retinal sensors covering a fixed
-          spatial extent. The individual circles rendered on the
-          sequence display the receptive field of each retinal sensor.
-
-        <p>
-          The main portion of the display window shows the cortical
-          regions associated with the two retinal patches. Each region
-          consists of a cortical column for each retinal
-          sensor. Within each column are multiple minicolumns. Each
-          minicolumn is proximally connected to the column's sensor
-          via a log-Gabor convolutional filter. This filter is
-          currently standing in place for what will eventually become
-          an adaptive (Hebbian) filter. The minicolumn with the
-          greatest filter response (dot product of receptive field
-          with log-Gabor filter) fires first and then decays over
-          time. While it is fading, the next best filter match has the
-          opportunity to fire. This process continues until either no
-          more filters exceed the activation threshold, or any of the
-          previously activated filters have completed their refractory
-          period and are ready to fire again.
-
-        <p>
-          NOTE: Some of the controls are currently inactive as the
-          backend functionality has not yet been completed.
-      </li>
-      
-      <li>
         <h3><a id="maze-runner" class="anchor" href="#maze-runner" aria-hidden="true"><span class="octicon octicon-link"></span></a>
         <a href="MazeRunner">2D Maze environment with rudimentary physics. Potential environment for agent.</h3></a>
         
@@ -141,7 +101,86 @@
           atoms" checkbox in the menu.
           
       </li>
+      
+      <li>
+        <h3><a id="vision-proto1" class="anchor" href="#vision-proto1" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+          <a href="https://vision-proto1.herokuapp.com/">Retina to V1 mapping</a></h3>
+
+        <p>
+          Prototype of a visualization of a low-level visual encoding
+          strategy. At the top of the window a sequence of MNIST
+          digits are displayed with an overlay of a stencil displaying
+          the proximal receptive fields for a set of cortical
+          columns. The size of the stencil can be controled through
+          colRadius. 
+        <p>
+          The primary visualization is a 3D depiction of the encoding
+          of features associated with each column's receptive
+          fields. Each cortical column is composed of 19 mini-columns
+          rendered as three concentric rings (1+6+12). The intensity
+          of each mini-column corresponds to the strength with which
+          the input field matches one of the nineteen Gabor Filters
+          (show in the lower left corner).**
+        <p>
+          ** If the Gabor field is unchecked, then a simpler set of 6
+          filters is used: centerOn, centerOff, xSobel, ySobel,
+          xScharr, and yScharr.
         
+      </li>
+
+      <li>
+        <h3><a id="stereo-vision-test1" class="anchor" href="#stereo-vision-test1" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+          <a href="https://stereo-vision-test1.herokuapp.com/">Stereo vision prototype with retinal encoding visualization</a></h3>
+        
+        <p>
+          A more detailed stereo vision prototype. This one is
+          designed to understand more about how to create a
+          sensor-motor feedback loop for aligning two independent
+          retinal sensor patches on the same location in the input
+          field.
+
+        <p>
+          In this demo, two retinal patches are overlaid on an input
+          field consisting of a sequence of colored MNIST digits. Each
+          patch consists of multiple retinal sensors covering a fixed
+          spatial extent. The individual circles rendered on the
+          sequence display the receptive field of each retinal sensor.
+
+        <p>
+          The main portion of the display window shows the cortical
+          regions associated with the two retinal patches. Each region
+          consists of a cortical column for each retinal
+          sensor. Within each column are multiple minicolumns. Each
+          minicolumn is proximally connected to the column's sensor
+          via a log-Gabor convolutional filter. This filter is
+          currently standing in place for what will eventually become
+          an adaptive (Hebbian) filter. The minicolumn with the
+          greatest filter response (dot product of receptive field
+          with log-Gabor filter) fires first and then decays over
+          time. While it is fading, the next best filter match has the
+          opportunity to fire. This process continues until either no
+          more filters exceed the activation threshold, or any of the
+          previously activated filters have completed their refractory
+          period and are ready to fire again.
+
+        <p>
+          NOTE: Some of the controls are currently inactive as the
+          backend functionality has not yet been completed.
+      </li>
+      
+      <li>
+        <h3><a id="htm-conway" class="anchor" href="#htm-conway" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+          <a href="htm-conway">Can HTM learn Conway's Game of Life?</a></h3>
+
+        <p>
+          Inspired by a question asked in the HTM Forum, this example
+          seeks to answer the question: "Can HTM learn Conway's Game
+          of Life?"
+
+        <p>
+          This is a work in progress. Check back soon for future
+          updates.
+          
     </ul>
     <h2> Notes </h2>
     <ul>
