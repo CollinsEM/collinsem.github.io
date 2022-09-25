@@ -27,6 +27,45 @@
       </li>
       
       <li>
+        <h3><a id="gclusteron-1" class="anchor" href="#gclusteron-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+        <a href="GradientClusteronDemo1D">Gradient Clusteron</a></h3>
+        
+        <p>
+          This demo is a variation on the GATACA example above. We
+          take the same 1D domain with four possible input features at
+          each location. The top line is the input domain. The three
+          lines below show the target pattern and current input to
+          each of the sensor patches. For each sensor patch, there are
+          20 pre-synaptic neurons (not shown), and of these, 5 will be
+          active during each cycle (corresponding to the currently
+          active detector in each sensor).
+
+          The graphs shown below are visualizations of dendrites for
+          three post-synaptic neurons. Each dendrite has 20 synapses
+          corresponding to each of the detectors on each sensor. Each
+          of the synapses has an associated weight and position on the
+          dendrite. The synaptic weights are indicated by the vertical
+          bars along the dendrite. Activated synapses will generate a
+          localized effect on the dendrite inversely proportional to
+          the distance away from the synapse location (indicated by
+          the Gaussian bump centered on each active synapse). The
+          learning rule follows that described
+          in <a href="https://doi.org/10.1371/journal.pcbi.1009015">
+          this paper</a> by Toviah Moldwin, et.al.
+
+          The dendrite activation is depicted by the thicker plot
+          line, and then integrated into the bar on the far right. The
+          white horizontal line on this bar is the post-synaptic
+          neuron firing threshold. These plots will take on different
+          colors depending on the current state. Green for successful
+          detection of the target pattern (true-positive), cyan for
+          failure to detect the target pattern (false-negative), red
+          for detection of the pattern when not present
+          (false-positive), and gray for successful non-detection of
+          the pattern (true-negative).
+      </li>
+      
+      <li>
         <h3><a id="stereo-test" class="anchor" href="#stereo-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>
         <a href="stereo-test">Early stage visualization of an agent with binocular/stereo vision.</a></h3>
         
